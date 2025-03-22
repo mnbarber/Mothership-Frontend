@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/users`;
+const BASE_URL = "https://mothership-backend-b502f96270d5.herokuapp.com/users";
 
 const index = async () => {
   try {
