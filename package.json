@@ -26,5 +26,5 @@
     "globals": "^15.14.0",
     "vite": "^6.0.5"
   },
-  "proxy": "https://mothership-backend-b502f96270d5.herokuapp.com"
+  "proxy": "https://localhost:3000"
 }
