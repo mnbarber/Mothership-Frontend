@@ -15,6 +15,7 @@
     display: flex;
     max-width: 700px;
     flex-direction: column;
+    align-items: center;
   }
   
   .container section article {
@@ -70,9 +71,6 @@
     margin: 0 0 0 7px;
   }
   
-  /* Button icon styling */
-  /* This styling will be used when we add in our reusable icon component */
-  
   .container header button img,
   .container header a img {
     width: 24px;
@@ -101,9 +99,9 @@
     padding: 0;
     display: flex;
     border: none;
-    max-width: 100%;
+    max-width: 50%;
     box-shadow: none;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -116,6 +114,7 @@
     font-size: 14px;
     resize: vertical;
     border-radius: 5px;
+    background-color: #3d3869;
     margin: 14px 0px 14px 0px;
     border: 1px solid var(--border);
   }
@@ -124,21 +123,42 @@
     min-height: 50px;
   }
   
-  .container form button {
-    color: white;
-    font-weight: 600;
-    background: #00a0df;
-    width: 40px;
-    height: 40px;
-    margin: 0 0 0 14px;
-    border-radius: 50%;
+  .container button {
+    font-family: "Open Sans", sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #6c67b4;
+    cursor: pointer;
+    border: 2px solid;
+    padding: 0.5em 0.50em;
+    margin: 0.50em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+      
+.container button:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+.container button:hover {
+    color: #8190f0;
+}
+      
+@media (min-width: 768px) {
+    button {
+        padding: 0.25em 0.50em;
+    }
+}
+
+.postText {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-  }
-  
-  .container form button img {
-    width: 25px;
-    height: 25px;
-  }
-  
+}

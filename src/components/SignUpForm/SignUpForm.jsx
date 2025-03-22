@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
-
+import styles from './SignUpForm.module.css';
 import { signUp } from '../../services/authService';
 
 import { UserContext } from '../../contexts/UserContext';
@@ -38,11 +38,11 @@ const SignUpForm = () => {
   };
 
   return (
-    <main>
+    <main className={styles.container}>
       <h1>Sign Up</h1>
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className={styles.div}>
           <label htmlFor='username'>Username:</label>
           <input
             type='text'
@@ -53,7 +53,7 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
+        <div className={styles.div}>
           <label htmlFor='password'>Password:</label>
           <input
             type='password'
@@ -64,7 +64,7 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
+        <div className={styles.div}>
           <label htmlFor='confirm'>Confirm Password:</label>
           <input
             type='password'

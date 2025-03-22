@@ -49,7 +49,7 @@ const PostDetails = (props) => {
                     )}
                     </div>
                 </header>
-                <p>{post.text}</p>
+                <p className={styles.postText}>{post.text}</p>
             </section>
             <section>
                 <h2>Comments</h2>
@@ -69,7 +69,7 @@ const PostDetails = (props) => {
                                 )} 
                             </div>
                         </header>
-                        <p>{comment.text}</p>
+                        <p className={styles.postText}>{comment.text}</p>
                     </article>
                 ))}
             </section>
