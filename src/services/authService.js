@@ -35,7 +35,10 @@ const signIn = async (formData) => {
     const res = await fetch(`${BASE_URL}/sign-in`, {
       method: 'POST',
       mode: 'cors',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://mothership-backend-b502f96270d5.herokuapp.com'
+      },
       body: JSON.stringify(formData),
     });
 
