@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/"
+  to = "https://mothership-backend-b502f96270d5.herokuapp.com"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
