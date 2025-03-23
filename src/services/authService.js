@@ -4,6 +4,7 @@ const signUp = async (formData) => {
   try {
     const res = await fetch(`${BASE_URL}/sign-up`, {
       method: 'POST',
+      mode: 'cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
@@ -30,6 +31,7 @@ const signIn = async (formData) => {
   try {
     const res = await fetch(`${BASE_URL}/sign-in`, {
       method: 'POST',
+      mode: 'cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
