@@ -1,13 +1,11 @@
-const BASE_URL = "https://mothership-backend-b502f96270d5.herokuapp.com/auth";
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/auth`;
 
 const signUp = async (formData) => {
   try {
     const res = await fetch(`${BASE_URL}/sign-up`, {
       method: 'POST',
-      mode: 'cors',
       headers: { 
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://mothership-backend-b502f96270d5.herokuapp.com' 
+        'Content-Type': 'application/json' 
       },
       body: JSON.stringify(formData),
     });
@@ -34,10 +32,8 @@ const signIn = async (formData) => {
   try {
     const res = await fetch(`${BASE_URL}/sign-in`, {
       method: 'POST',
-      mode: 'cors',
       headers: { 
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://mothership-backend-b502f96270d5.herokuapp.com'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(formData),
     });

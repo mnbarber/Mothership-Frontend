@@ -10,14 +10,18 @@ import PostList from './components/PostList/PostList';
 import PostDetails from './components/PostDetails/PostDetails';
 import PostForm from './components/PostForm/PostForm';
 import CommentForm from './components/CommentForm/CommentForm';
+import CharSheetList from './components/CharSheetList/CharSheetList';
+import CharSheetDetails from './components/CharSheetDetails/CharSheetDetails';
 
 import { UserContext } from './contexts/UserContext';
 import * as postService from './services/postService';
+import * as charSheetService from './services/charSheetService';
 
 const App = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const [posts, setPosts] = useState([]);
+  const [charSheets, setCharSheets] = useState([]);
 
   useEffect(() => {
     const fetchAllPosts = async () => {
@@ -25,6 +29,12 @@ const App = () => {
       setPosts(postsData);
     };
     if(user) fetchAllPosts();
+
+    const fetchAllCharSheets = async () => {
+      const charSheetsData = await charSheetService.index();
+      setCharSheets(charSheetsData);
+    }
+    if(user) fetchAllCharSheets();
   }, [user]);
 
   const handleAddPost = async (postFormData) => {
@@ -53,6 +63,8 @@ const App = () => {
         {user ? (
           <>
             <Route path='/posts' element={<PostList posts={posts} />} />
+            <Route path='/charSheets' element={<CharSheetList charSheets={charSheets} />} />
+            <Route path='/charSheets/:charSheetId' element={<CharSheetDetails />} />
             <Route path='/posts/:postId' element={<PostDetails handleDeletePost={handleDeletePost}/>} />
             <Route path='/posts/new' element={<PostForm handleAddPost={handleAddPost} />} />
             <Route path='/posts/:postId/edit' element={<PostForm handleUpdatePost={handleUpdatePost}/>} />
